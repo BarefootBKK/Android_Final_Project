@@ -3,4 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorNavigationSelectedText">#a2a266</color>
+    <color name="floatingactionbutton">#a2a266</color>
 </resources>

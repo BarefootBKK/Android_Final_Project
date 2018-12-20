@@ -1,9 +1,9 @@
 package com.example.as_final_project.entities;
 
 public class MyResponse {
-    private int code;
-    private String data;
-    private String errorMsg;
+    private int code;            // 状态代码
+    private String data;         // 数据
+    private String errorMsg;    // 错误信息
 
     public MyResponse() {
 
