@@ -3,6 +3,9 @@ package com.example.as_final_project.utils;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,7 +22,7 @@ public class ActivityUtil {
     /**
      * 设置为沉浸式状态栏
      */
-    public void setStatusBar(Activity activity) {
+    public void setStatusBar (Activity activity) {
         boolean useThemeStatusBarColor = false;
         boolean useStatusBarColor = true;
 

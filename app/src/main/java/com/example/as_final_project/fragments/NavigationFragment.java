@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.view.ViewGroup;
 import com.example.as_final_project.R;
 
 public class NavigationFragment extends BaseFragment {
+    private final int CONTAINER_ID = R.id.a_main_fragment_container;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class NavigationFragment extends BaseFragment {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_movie:
+                    replaceFragment(CONTAINER_ID, new VideoAudioFragment());
                     return true;
                 case R.id.navigation_idea:
                     return true;

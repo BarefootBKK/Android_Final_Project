@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,9 +13,10 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.as_final_project.R;
 import com.example.as_final_project.activities.MainActivity;
 
-public class BaseFragment extends Fragment implements View.OnClickListener {
+public class BaseFragment extends Fragment {
 
     protected int menuId;
     protected int toolbarId;
@@ -26,31 +29,24 @@ public class BaseFragment extends Fragment implements View.OnClickListener {
         if (isSetToolbar) {
             this.initToolBar();
         }
-        // 初始化Click监听器
-        this.initClickListener();
         super.onActivityCreated(savedInstanceState);
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
-        // 加载图标
-        inflater.inflate(menuId, menu);
+        if (isSetMenu) {
+            menu.clear();
+            // 加载图标
+            inflater.inflate(menuId, menu);
+        }
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-
-        }
-    }
-
-    /**
-     * 初始化Click监听器
-     */
-    private void initClickListener() {
-
+    public void replaceFragment(int containerId, Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(containerId, fragment);
+        transaction.commit();
     }
 
     /**
