@@ -46,6 +46,7 @@ public class NavigationFragment extends BaseFragment {
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.navigation_home:
+                    replaceFragment(CONTAINER_ID,new HomepageFragment());
                     return true;
                 case R.id.navigation_movie:
                     replaceFragment(CONTAINER_ID, new VideoAudioFragment());
