@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorNavigationSelectedText">#a2a266</color>
     <color name="floatingactionbutton">#a2a266</color>
+    <color name="watergreen">#d1eeee</color>
+    <color name="darkgray">#838b83</color>
+    <color name="lightgray">#eaeaea</color>
 </resources>
