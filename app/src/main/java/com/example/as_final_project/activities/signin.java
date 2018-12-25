@@ -9,9 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.as_final_project.R;
+import com.example.as_final_project.entities.Account;
+
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
-import edu.bjtu.example.sportsdashboard.DataBase.Account;
+
 
 public class signin extends AppCompatActivity {
     TextView name;

@@ -10,12 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.as_final_project.R;
+import com.example.as_final_project.entities.Account;
+
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import edu.bjtu.example.sportsdashboard.DataBase.Account;
+
 
 public class login extends AppCompatActivity {
     private Context con  ;

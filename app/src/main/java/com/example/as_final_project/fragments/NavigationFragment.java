@@ -1,5 +1,7 @@
+
 package com.example.as_final_project.fragments;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -16,6 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.as_final_project.R;
+import com.example.as_final_project.activities.MainActivity;
+import com.example.as_final_project.activities.login;
+
+import cn.bmob.v3.Bmob;
 
 public class NavigationFragment extends BaseFragment {
     private final int CONTAINER_ID = R.id.a_main_fragment_container;
@@ -34,6 +40,7 @@ public class NavigationFragment extends BaseFragment {
         navigationView.setItemIconTintList(null);
         ColorStateList colorStateList = getResources().getColorStateList(R.color.bm_text);
         navigationView.setItemTextColor(colorStateList);
+
         super.onActivityCreated(savedInstanceState);
     }
 

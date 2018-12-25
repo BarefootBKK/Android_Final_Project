@@ -25,8 +25,8 @@
             android:layout_marginTop="5dip"
             android:layout_marginVertical="30dp"
             android:gravity="center"
-            android:text="YUZU SPORT"
-            android:textColor="@color/colorBlueJeansDark"
+            android:text="TURBO"
+            android:textColor="@color/white"
             android:textSize="60dp"
 
             />
@@ -66,7 +66,7 @@
                 android:paddingRight="15dip"
                 android:paddingTop="2dip"
                 android:text="登陆"
-                android:textColor="@color/colorBlueJeansDark"
+                android:textColor="@color/white"
                 android:textSize="25sp"
 
                 />

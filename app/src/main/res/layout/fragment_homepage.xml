@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fg_hp_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:background="#d85050"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.AppCompat.Light">
+    </android.support.v7.widget.Toolbar>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="搜索内容"
+        app:layout_constraintBottom_toBottomOf="@+id/fg_hp_toolbar"
+        />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fg_hp_tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/mediumturquoise"
+        app:tabSelectedTextColor="@color/darkgray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"></android.support.design.widget.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/fg_hp_fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/fg_hp_tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
