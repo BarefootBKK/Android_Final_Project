@@ -17,6 +17,13 @@ public class Movie {
     public Movie() {
     }
 
+    public Movie(int id,String name,String release, String posterurl) {
+        movieId = id;
+        movieName = name;
+        releaseInfo = release;
+        moviePosterUrl = posterurl;
+    }
+
     public int getMovieId() {
         return movieId;
     }

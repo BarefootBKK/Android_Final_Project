@@ -51,6 +51,7 @@ public class NavigationFragment extends BaseFragment {
                     replaceFragment(CONTAINER_ID, new VideoAudioFragment());
                     return true;
                 case R.id.navigation_idea:
+                    replaceFragment(CONTAINER_ID, new IdeaFragment());
                     return true;
                 case R.id.navigation_user:
                     return true;
