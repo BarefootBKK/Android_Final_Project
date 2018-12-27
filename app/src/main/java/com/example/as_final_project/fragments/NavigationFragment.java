@@ -1,7 +1,5 @@
-
 package com.example.as_final_project.fragments;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -18,10 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.as_final_project.R;
-import com.example.as_final_project.activities.MainActivity;
-import com.example.as_final_project.activities.login;
-
-import cn.bmob.v3.Bmob;
+import com.example.as_final_project.utils.ActivityUtil;
 
 public class NavigationFragment extends BaseFragment {
     private final int CONTAINER_ID = R.id.a_main_fragment_container;
@@ -40,7 +35,6 @@ public class NavigationFragment extends BaseFragment {
         navigationView.setItemIconTintList(null);
         ColorStateList colorStateList = getResources().getColorStateList(R.color.bm_text);
         navigationView.setItemTextColor(colorStateList);
-
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -53,14 +47,16 @@ public class NavigationFragment extends BaseFragment {
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.navigation_home:
+                    ActivityUtil.replaceFragment(CONTAINER_ID, ActivityUtil.FRAGMENT_HOMEPAGE, getActivity().getSupportFragmentManager());
                     return true;
                 case R.id.navigation_movie:
-                    replaceFragment(CONTAINER_ID, new VideoAudioFragment());
+                    ActivityUtil.replaceFragment(CONTAINER_ID, ActivityUtil.FRAGMENT_VIDEO_AUDIO, getActivity().getSupportFragmentManager());
                     return true;
                 case R.id.navigation_idea:
-                    replaceFragment(CONTAINER_ID, new IdeaFragment());
+                    ActivityUtil.replaceFragment(CONTAINER_ID, ActivityUtil.FRAGMENT_IDEA, getActivity().getSupportFragmentManager());
                     return true;
                 case R.id.navigation_user:
+                    ActivityUtil.replaceFragment(CONTAINER_ID, ActivityUtil.FRAGMENT_USER, getActivity().getSupportFragmentManager());
                     return true;
                 default:
                     return false;

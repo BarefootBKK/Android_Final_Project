@@ -8,7 +8,7 @@ public class Idea {
     private int comment_num;
     private String idea_image_url;
 
-    public Idea(int id,String title,String context,int zan_num,int comment_num,String idea_image_url ){
+    public Idea(int id, String title, String context, int zan_num, int comment_num, String idea_image_url ){
         this.id = id;
         this.title = title;
         this.context = context;

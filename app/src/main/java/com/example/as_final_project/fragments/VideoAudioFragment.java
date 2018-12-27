@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.as_final_project.R;
+import com.example.as_final_project.fragments.subfragments.BookFragment;
+import com.example.as_final_project.fragments.subfragments.MovieFragment;
 
 public class VideoAudioFragment extends BaseFragment implements TabLayout.OnTabSelectedListener{
     private TabLayout mTab;

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/item_film_actor_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="演员"
+        android:textColor="#ede0e0"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/item_film_actor_name"
+        app:layout_constraintStart_toStartOf="@+id/item_film_actor_name"
+        app:layout_constraintTop_toBottomOf="@+id/item_film_actor_name" />
+
+    <TextView
+        android:id="@+id/item_film_actor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="角色"
+        android:textColor="#efe6e6"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/item_film_actor_cardView"
+        app:layout_constraintStart_toStartOf="@+id/item_film_actor_cardView"
+        app:layout_constraintTop_toBottomOf="@+id/item_film_actor_cardView" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/item_film_actor_cardView"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="4dp"
+        android:elevation="0dp"
+        app:cardCornerRadius="2dp"
+        app:layout_constraintDimensionRatio="w,7.05:10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_film_actor_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/bm_navigation_4" />
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

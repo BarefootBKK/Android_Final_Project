@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AS_Final_Project</string>
+    <string name="app_name">TURBO</string>
+    <string name="input_user">请输入账号</string>
+    <string name="input_password">请输入密码</string>
 </resources>

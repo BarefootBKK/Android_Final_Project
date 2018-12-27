@@ -289,5 +289,3 @@ public class IdeaFragment extends BaseFragment implements View.OnClickListener{
 
 
 }
-
-

@@ -1,8 +1,11 @@
 package com.example.as_final_project.utils;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,11 +15,33 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.as_final_project.R;
+import com.example.as_final_project.config.BasicConfig;
+
+import java.util.List;
 
 public class ActivityUtil {
 
+    public static final int FRAGMENT_HOMEPAGE = 0;
+    public static final int FRAGMENT_VIDEO_AUDIO = 1;
+    public static final int FRAGMENT_IDEA = 2;
+    public static final int FRAGMENT_USER = 3;
+
+    public static List<Fragment> fragmentList;
+
     public static ActivityUtil getInstance() {
         return new ActivityUtil();
+    }
+
+    public static void startActivityWithParcelable(Context context, Class targetClass, Parcelable parcelable) {
+        Intent intent = new Intent(context, targetClass);
+        intent.putExtra(BasicConfig.INTENT_DATA_NAME, parcelable);
+        context.startActivity(intent);
+    }
+
+    public static void replaceFragment(int containerId, int fragmentIndex, FragmentManager fragmentManager) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(containerId, fragmentList.get(fragmentIndex));
+        transaction.commit();
     }
 
     /**

@@ -1,358 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sub_fg_film_refreshLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none">
+    android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!-- 找电影 -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/sub_fg_film_cimg_findmovie"
-            android:layout_width="86dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:src="#0074cc"
-            app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <ImageView
-            android:id="@+id/sub_fg_film_img_findmovie"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_findmovie"
-            app:srcCompat="@drawable/ic_film_search" />
-
-        <!--  榜单 -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/sub_fg_film_cimg_rank"
-            android:layout_width="86dp"
-            android:layout_height="50dp"
-            android:src="#cde709"
-            app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_findmovie" />
-
-        <ImageView
-            android:id="@+id/sub_fg_film_img_rank"
-            android:layout_width="27dp"
-            android:layout_height="27dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_rank"
-            app:srcCompat="@drawable/ic_rank_fill" />
-
-        <!-- 猜你喜欢 -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/sub_fg_film_cimg_guess"
-            android:layout_width="86dp"
-            android:layout_height="50dp"
-            android:src="#88b405"
-            app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_rank"/>
-
-        <ImageView
-            android:id="@+id/sub_fg_film_img_guess"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_guess"
-            app:srcCompat="@drawable/ic_guess" />
-
-        <!--  片单 -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/sub_fg_film_cimg_videolist"
-            android:layout_width="86dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:src="#2500cc"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_guess"/>
-
-        <ImageView
-            android:id="@+id/sub_fg_film_img_videolist"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_videolist"
-            app:srcCompat="@drawable/ic_video" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_text_findmovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="找电影"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_findmovie"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_findmovie" />
-
-        <!--  头部四个选项 -->
-        <TextView
-            android:id="@+id/sub_fg_film_text_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="榜单"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_rank"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_rank" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_text_guess"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="猜您喜欢"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_guess"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_guess" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_text_videolist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="片单"
-            app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_videolist"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_videolist" />
-        <!-- end 头部四个选项 -->
-
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/sub_fg_film_viewpager"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintDimensionRatio="w,1:2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_text_findmovie" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_title_hot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="影院热映"
-            android:textColor="#524e4e"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_viewpager" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_title_current_hot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="当前热门"
-            android:textColor="#524e4e"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_ry_hot" />
-
-        <TextView
-            android:id="@+id/sub_fg_film_title_videolist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="热门片单"
-            android:textColor="#524e4e"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_ry_current_hot" />
-
-        <View
-            android:id="@+id/sub_fg_film_line_hot"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0.1dip"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:background="#e2d2d2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_hot" />
+            android:layout_height="match_parent">
+            <!-- 找电影 -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sub_fg_film_cimg_findmovie"
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:src="#0074cc"
+                app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/sub_fg_film_line_current_hot"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dip"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:background="#e2d2d2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_current_hot" />
+            <ImageView
+                android:id="@+id/sub_fg_film_img_findmovie"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_findmovie"
+                app:srcCompat="@drawable/ic_film_search" />
 
-        <View
-            android:id="@+id/sub_fg_film_line_videolist"
-            android:layout_width="match_parent"
-            android:layout_height="0.1dip"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:background="#e2d2d2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_videolist" />
+            <!--  榜单 -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sub_fg_film_cimg_rank"
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:src="#cde709"
+                app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_findmovie" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/sub_fg_film_ry_hot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_hot" />
+            <ImageView
+                android:id="@+id/sub_fg_film_img_rank"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_rank"
+                app:srcCompat="@drawable/ic_rank_fill" />
 
-        <TextView
-            android:id="@+id/sub_fg_film_text_hot_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="全部 37＞"
-            android:textColor="#3e3a3a"
-            android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_hot"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <!-- 猜你喜欢 -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sub_fg_film_cimg_guess"
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:src="#88b405"
+                app:layout_constraintEnd_toStartOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_rank"/>
 
-        <TextView
-            android:id="@+id/sub_fg_film_text_videolist_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="全部 37＞"
-            android:textColor="#3e3a3a"
-            android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_videolist"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <ImageView
+                android:id="@+id/sub_fg_film_img_guess"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_guess"
+                app:srcCompat="@drawable/ic_guess" />
 
-        <TextView
-            android:id="@+id/sub_fg_film_text_current_hot_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="全部 37＞"
-            android:textColor="#3e3a3a"
-            android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_current_hot"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <!--  片单 -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sub_fg_film_cimg_videolist"
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="#2500cc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_guess"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/sub_fg_film_ry_current_hot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_current_hot" />
+            <ImageView
+                android:id="@+id/sub_fg_film_img_videolist"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_cimg_videolist"
+                app:srcCompat="@drawable/ic_video" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_findmovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="找电影"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_findmovie"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_findmovie" />
+
+            <!--  头部四个选项 -->
+            <TextView
+                android:id="@+id/sub_fg_film_text_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="榜单"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_rank"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_rank" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_guess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="猜您喜欢"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_guess"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_guess" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_videolist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="片单"
+                app:layout_constraintEnd_toEndOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintStart_toStartOf="@+id/sub_fg_film_cimg_videolist"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_cimg_videolist" />
+            <!-- end 头部四个选项 -->
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/sub_fg_film_ry_videolist"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:descendantFocusability="blocksDescendants"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_videolist" />
+            <android.support.v4.view.ViewPager
+                android:id="@+id/sub_fg_film_viewpager"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintDimensionRatio="w,1:2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_text_findmovie" />
 
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/sub_fg_film_title_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="影院热映"
+                android:textColor="#524e4e"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_viewpager" />
 
-</ScrollView>
+            <TextView
+                android:id="@+id/sub_fg_film_title_current_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="当前热门"
+                android:textColor="#524e4e"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_ry_hot" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_title_videolist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="热门片单"
+                android:textColor="#524e4e"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_ry_current_hot" />
+
+            <View
+                android:id="@+id/sub_fg_film_line_hot"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:background="#e2d2d2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_hot" />
+
+            <View
+                android:id="@+id/sub_fg_film_line_current_hot"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:background="#e2d2d2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_current_hot" />
+
+            <View
+                android:id="@+id/sub_fg_film_line_videolist"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:background="#e2d2d2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_fg_film_title_videolist" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sub_fg_film_ry_hot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_hot" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_hot_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="全部 6＞"
+                android:textColor="#3e3a3a"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_hot"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_videolist_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="全部 6＞"
+                android:textColor="#3e3a3a"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_videolist"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/sub_fg_film_text_current_hot_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="全部 6＞"
+                android:textColor="#3e3a3a"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_fg_film_title_current_hot"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sub_fg_film_ry_current_hot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_current_hot" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sub_fg_film_ry_videolist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sub_fg_film_line_videolist" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

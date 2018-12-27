@@ -1,9 +1,11 @@
 package com.example.as_final_project.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.as_final_project.R;
+import com.example.as_final_project.activities.MovieDetailActivity;
 import com.example.as_final_project.entities.Movie;
+import com.example.as_final_project.utils.ActivityUtil;
+import com.example.as_final_project.utils.MyStringUtil;
 import com.example.as_final_project.utils.ToastUtil;
 import com.squareup.picasso.Picasso;
 
@@ -39,12 +44,12 @@ public class MovieCardAdapter extends RecyclerView.Adapter<MovieCardAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         final Movie movie = movieList.get(position);
-        viewHolder.movieName.setText(movie.getMovieName());
+        viewHolder.movieName.setText(MyStringUtil.getSubString(movie.getMovieName(), 6));
         Picasso.get().load(movie.getMoviePosterUrl()).into(viewHolder.moviePoster);
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showToast(mContext, movie.getMovieName());
+                ActivityUtil.startActivityWithParcelable(mContext, MovieDetailActivity.class, movie);
             }
         });
     }

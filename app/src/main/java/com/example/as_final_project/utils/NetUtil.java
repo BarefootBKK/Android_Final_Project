@@ -6,6 +6,9 @@ import android.net.NetworkInfo;
 
 import com.example.as_final_project.config.NetConfig;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -55,6 +58,15 @@ public class NetUtil {
                 .readTimeout(1000, TimeUnit.MILLISECONDS)
                 .build();
         return client;
+    }
+
+    public static String getParsedJSONStringData(String jsonData, String name) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            return jsonObject.getString(name);
+        } catch (JSONException e) {
+            return null;
+        }
     }
 
     /**
